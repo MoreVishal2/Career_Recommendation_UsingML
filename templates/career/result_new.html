@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .graph-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .graph-box {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 45%;
+      min-width: 300px;
+      text-align: center;
+    }
+    .dashboard-header {
+      margin-top: 30px;
+    }
+
+    .dashboard-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1200px;
+    gap: 20px;
+  }
+
+  .dashboard-box {
+    flex: 1 1 calc(25% - 20px);
+    color: black;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    font-size: 1.2rem;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Notification Script -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    {% for message in messages %}
+    swal("{{message}}");
+    {% endfor %}
+</script>
+
+  <nav class="navbar navbar-expand-lg bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">User Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/user_dashboard">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/prediction">Prediction</a>
+        </li>
+
+        </ul>
+        <div class="d-flex" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <p>Welcome, {{ username }}</p>
+            </li>
+            &nbsp;
+            <li class="nav-item">
+              <a href="/logout" class="btn btn-danger">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!-- Dashboard Content -->
+<div class="container dashboard-header text-center">
+  <h1 class="mt-4"><strong>Prediction Result</strong></h1>
+  <h2 class="mt-4">{{ prediction }}</h2>
+</div>
+
+<hr>
+<hr>
+
+<div class="container dashboard-header text-center">
+  <h1 class="mt-4"> <strong>✅ Top Videos</strong> </h1>
+   {% for video_id in youtube_video_ids %}
+      <iframe class="embed-responsive-item"
+                    src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen></iframe>
+  {% endfor %}
+</div>
+
+<hr>
+<hr>
+
+
+
+<div class="container dashboard-header text-center">
+  <h1 class="mt-4"> <strong> Related Courses </strong> </h1>
+  <h2 class="mt-4">{{ related_careers[0] }}, {{ related_careers[1] }}</h2>
+</div>
+
+<hr>
+<hr>
+
+<div class="container dashboard-header text-center">
+  <h1 class="mt-4"> <strong>Graphs</strong></h1>
+    <!-- Graphs -->
+    <div class="container graph-container">
+      <div>
+        <img src="data:image/png;base64,{{ bar_chart }}" alt="Bar Chart" style="border-radius:30px;">
+      </div>
+      <div>
+        <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart" style="border-radius:30px;">
+      </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

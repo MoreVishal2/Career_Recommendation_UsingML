@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Career Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .card-custom {
+            margin-bottom: 30px;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.25rem;
+        }
+
+        .section-heading {
+            font-weight: bold;
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+        }
+
+        .navbar {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Career Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user-dashboard">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/career/page1">Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/choose">Choose</a>
+                    </li>
+                </ul>
+                <a href="/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        {% set items = [
+            ("Seek internship opportunities", "Internships are a great way to gain hands-on experience in your chosen field...", "career/c1.jpg"),
+            ("Take part in a work-study program", "These programs provide part-time jobs for students with financial needs...", "career/c2.jpg"),
+            ("Grow your skills and knowledge", "Employers look for diverse skill sets. Take electives that support your goals...", "career/c3.jpg"),
+            ("Get an early start", "Start looking for relevant job opportunities before graduation...", "career/c4.jpg"),
+            ("Stay focused", "Let your experiences guide your career path and make you a strong professional...", "career/c5.jpg"),
+            ("Find a balance with your personal life", "Balance your studies with personal time for hobbies, family, and friends...", "career/c6.jpg"),
+            ("Use school’s career services", "Career services can help you with resume building and job search assistance...", "career/c5.jpg")
+        ] %}
+        {% for title, desc, img in items %}
+        <div class="card mb-4 shadow card-custom">
+            <div class="row g-0">
+                <div class="col-md-8 d-flex flex-column justify-content-center p-4">
+                    <h3 class="section-heading">{{ loop.index }}. {{ title }}</h3>
+                    <p class="mb-0">{{ desc }}</p>
+                </div>
+                <div class="col-md-4 d-flex align-items-center p-2">
+                    <img src="{{ url_for('static', filename='images/' + img) }}" class="card-img" alt="{{ title }}">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Counselling</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        .container-flex {
+            width: 100%;
+            height: 2250px;
+            /* height: 100vh; */
+            background-image: url('static/images/pre3.jpg');
+            background-size: cover;
+            background-position: center;
+            /* background-color: aqua; */
+        }
+
+        /* .form-label {
+            color: aliceblue;
+        } */
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-info
+    ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">User Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/user-dashboard">Home</a>
+                    </li>
+                
+
+                </ul>
+
+
+                <div class="d-flex" id="navbarNav">
+                    <ul class="navbar-nav">
+                    
+                        &nbsp;
+                        <li class="nav-item">
+                            <a href="/logout" class="btn btn-danger">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Prediction form  -->
+
+    <div class="container-flex">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center" style="color: #6d6da5;">Career Counselling</h1>
+
+                        <form method="POST" action="/career/page10">
+                            
+
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Workshops Attended</label>
+                                <select class="form-select" id="workshops" name="workshops">
+                                    <option>--Select--</option>
+                                    <option value="1">Testing</option>
+                                    <option value="2">database security</option>
+                                    <option value="3">game development</option>
+                                    <option value="4">data science</option>
+                                    <option value="5">system designing</option>
+                                    <option value="6">hacking</option>
+                                    <option value="7">cloud computing</option>
+                                    <option value="8">web technologies</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Type of Company You Want to Settle In</label>
+                                <select class="form-select" id="Type_of_company_want_to_settle_in"
+                                    name="Type_of_company_want_to_settle_in">
+                                    <option>--Select--</option>
+                                    <option value="1">BPA</option>
+                                    <option value="2">Cloud Services</option>
+                                    <option value="3">product development</option>
+                                    <option value="4">Testing and Maintainance Services</option>
+                                    <option value="5">SAaS services</option>
+                                    <option value="6">Web Services</option>
+                                    <option value="7">Finance</option>
+                                    <option value="8">Sales and Marketing</option>
+                                    <option value="9">Product based</option>
+                                    <option value="10">Service Based</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Interested Career Area</label>
+                                <select class="form-select" id="interested_career_area" name="interested_career_area">
+                                    <option>--Select--</option>
+                                    <option value="1">testing</option>
+                                    <option value="2">system developer</option>
+                                    <option value="3">Business process analyst</option>
+                                    <option value="4">security</option>
+                                    <option value="5">developer</option>
+                                    <option value="6">cloud computing</option>
+
+                                </select>
+                            </div>
+
+
+
+                            <center>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </center>
+                        </form>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateRangeValue(rangeId, valueId) {
+            var range = document.getElementById(rangeId);
+            var value = document.getElementById(valueId);
+            value.textContent = range.value;
+        }
+    </script>
+</body>
+
+</html>

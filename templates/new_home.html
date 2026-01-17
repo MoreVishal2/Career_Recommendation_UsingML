@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Career Guidance</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #e0f7fa;
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            color: #00796b;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .stream-btn {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 30px;
+            margin: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .stream-btn:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to AI Career Guidance System</h1>
+    <p>Select a stream to begin your career assessment:</p>
+
+    <div class="button-container">
+        <form action="/start" method="post">
+            <button type="submit" name="stream" value="Science" class="stream-btn">Science</button>
+            <button type="submit" name="stream" value="Commerce" class="stream-btn">Commerce</button>
+            <button type="submit" name="stream" value="Arts" class="stream-btn">Arts</button>
+        </form>
+    </div>
+</body>
+</html>

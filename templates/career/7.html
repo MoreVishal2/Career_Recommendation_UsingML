@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Counselling</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        .container-flex {
+            width: 100%;
+            height: 2250px;
+            /* height: 100vh; */
+            background-image: url('static/images/pre3.jpg');
+            background-size: cover;
+            background-position: center;
+            /* background-color: aqua; */
+        }
+
+        /* .form-label {
+            color: aliceblue;
+        } */
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-info
+    ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">User Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/user-dashboard">Home</a>
+                    </li>
+                
+
+                </ul>
+
+
+                <div class="d-flex" id="navbarNav">
+                    <ul class="navbar-nav">
+                    
+                        &nbsp;
+                        <li class="nav-item">
+                            <a href="/logout" class="btn btn-danger">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Prediction form  -->
+
+    <div class="container-flex">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center" style="color: #6d6da5;">Career Counselling</h1>
+
+                        <form method="POST" action="/career/page7">
+                            
+
+                    
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Hard Worker</label>
+                                <select class="form-select" id="B_hard_worker" name="B_hard_worker">
+                                    <option>--Select--</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Management</label>
+                                <select class="form-select" id="A_Management" name="A_Management">
+                                    <option>--Select--</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+
+                                </select>
+                            </div>
+
+
+                            <center>
+                                <button type="submit" class="btn btn-primary">Submit And Next</button>
+                            </center>
+                        </form>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateRangeValue(rangeId, valueId) {
+            var range = document.getElementById(rangeId);
+            var value = document.getElementById(valueId);
+            value.textContent = range.value;
+        }
+    </script>
+</body>
+
+</html>

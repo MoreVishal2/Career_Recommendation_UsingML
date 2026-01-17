@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Recommendation System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        .container-flex {
+            width: 100%;
+            height: 100vh;
+            background-image: url('static/images/a_login1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Career Counselling</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    
+                </ul>
+      
+                <div class="d-flex" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user-login">User Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin-login">Admin Login</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-flex">
+        <div class="row">
+            <div class="col"></div>
+
+            <div class="col-4 mt-4">
+                <center>
+                <h1 style="color: aliceblue;">Admin Login</h1></center>
+                <br><br>
+                {% if error %}
+                <p class="text-danger">{{ error }}</p>
+                {% endif %}
+                <form method="POST" action="/admin-login">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Password" required>
+                    </div>
+                <center>
+                    <button type="submit" class="btn btn-primary ">Login</button> </center>
+                </form>
+<center>
+                <a href="/admin-registration" style="color:aquamarine;">Create new Account</a>
+            </center>
+            </div>
+            <div class="col"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

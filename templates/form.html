@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Guidance Quiz</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        h2 {
+            color: #333;
+        }
+        .option {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        .progress {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="progress">Question {{ index }} of {{ total }}</div>
+    <form method="POST">
+        <h2>{{ q['Question'] }}</h2>
+        <div class="option"><input type="radio" name="option" value="A" required> A. {{ q['Option A'] }}</div>
+        <div class="option"><input type="radio" name="option" value="B"> B. {{ q['Option B'] }}</div>
+        <div class="option"><input type="radio" name="option" value="C"> C. {{ q['Option C'] }}</div>
+        <div class="option"><input type="radio" name="option" value="D"> D. {{ q['Option D'] }}</div>
+        <button type="submit">Submit & Next</button>
+    </form>
+</div>
+</body>
+</html>
