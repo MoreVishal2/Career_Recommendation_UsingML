@@ -117,10 +117,6 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (6, 'amol', 'amol@gmail.com', '123');
 
 --
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
@@ -145,8 +141,6 @@ ALTER TABLE `predictions`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
 --
 
 --
@@ -173,8 +167,6 @@ ALTER TABLE `predictions`
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
---
--- Constraints for dumped tables
 --
 
 --
